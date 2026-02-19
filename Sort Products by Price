@@ -1,0 +1,10 @@
+public static void sortProductsByPriceAscending(Session session) {
+    String hql = "FROM Product p ORDER BY p.price ASC";
+    Query<Product> query = session.createQuery(hql, Product.class);
+    List<Product> products = query.list();
+    
+    System.out.println("\n=== Products Sorted by Price (Ascending) ===");
+    for (Product product : products) {
+        System.out.println(product);
+    }
+}
